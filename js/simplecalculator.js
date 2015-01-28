@@ -120,7 +120,9 @@ function processPercentageButton(btnValue)
     var btnVal = btnValue;
 
     if(inputVal!='' && inputVal.indexOf('-') == -1 && inputVal.indexOf('+') == -1
-        && inputVal.indexOf('/') == -1 && inputVal.indexOf('x') == -1 && inputVal.indexOf('%') == -1)
+        && inputVal.indexOf('/') == -1 && inputVal.indexOf('x') == -1 && inputVal.indexOf('^') == -1
+        && inputVal.indexOf('(') == -1 && inputVal.indexOf(')') == -1
+        && inputVal.indexOf('%') == -1)
     {
         input.value += btnVal;
     }
@@ -245,10 +247,7 @@ function evaluatePostfixExpression(postfix)
         }
     }
 
-    //console.log(s.pop());
-    var sss = s.pop();
-    console.log(sss);
-    return sss;
+    return s.pop();
 
 }
 
